@@ -1,0 +1,132 @@
+ body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: linear-gradient(#237196, #2f4264);
+    /* background-color: blue; */
+    background-size:180vh/*180vmax, 100%*/, 180vh;
+    background-repeat: repeat-x/*, repeat-y*/, repeat;
+    background-position:initial/*, bottom*/, initial;
+}
+
+.logotipo{
+    width: 10%;
+}
+H1{
+    font-size: 30;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+tr{
+    border-style: outset;
+
+}
+
+.btn-outline {
+    text-decoration: none;
+    font-size: 1em;
+    color: rgb(118, 109, 244);
+    padding: 10px 30px;
+    border: 2px solid rgb(118, 109, 244);
+    position: relative;
+    transition: .5s;
+}
+.btn-outline::before,
+.btn-outline::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: inherit;
+    transition: .5s;
+}
+.btn-outline::before {
+    top: -10px;
+    left: -10px;
+    border-width: 2px 0 0 2px;
+}
+.btn-outline::after {
+    bottom: -10px;
+    right: -10px;
+    border-width: 0 2px 2px 0;
+}
+
+.btn-outline:hover::before,
+.btn-outline:hover::after {
+    width: calc(100% + 18px);
+    height: calc(100% + 18px);
+}
+
+.contField {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+
+.contField .box {
+    display: flex;
+    flex-flow: column-reverse;
+    justify-content: center;
+    border: 0;
+    width: 400px;
+    border-radius: 5px;
+    padding: 4px 15px 6px;
+    font-size: .9em;
+    cursor: text;
+    background-color: rgb(220, 220, 220, .1);
+    transition: .3s;
+}
+.contField .box:hover {
+    background-color: rgb(220, 220, 220, .1);
+}
+.contField .box:focus-within {
+    background-color: rgb(220, 220, 220, .2);
+}
+
+.contField .box .input::-webkit-input-placeholder {
+    opacity: 0;
+}
+.contField .box .input::-moz-placeholder {
+    color: transparent !important;
+}
+
+.contField .box textarea {
+    resize: none;
+    height: 150px;
+}
+
+.contField .box .input {
+    border: 0;
+    background-color: rgb(0, 0, 0, 0);
+    outline: 0;
+    font-size: 15px;
+    transition: all 0.2s;
+    color: rgb(220, 220, 220);
+    padding: 30px 0 10px;
+    margin: -30px 0 -10px;
+}
+.contField .box .input + label {
+    transform-origin: left;
+    color: rgb(220, 220, 220, .4);
+    cursor: text;
+    font-size: 15px;
+    user-select: none;
+    transition: all 0.2s;
+}
+.contField .box .input + label {
+    transform: translate(0, 50%) scale(1);
+    pointer-events: none;
+}
+.contField .box .input:not(:placeholder-shown) + label,
+.contField .box .input:focus + label {
+    transform: translate(0, 0) scale(.8);
+}
+
+@media only screen and (max-width: 830px) {
+
+    .contField .box {
+        width: 300px;
+    }
+
+}
